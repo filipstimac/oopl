@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1515227971 source:f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<vector>
+	<Vehicle.h>
+
+1515228312 f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\include\vehicle.h
+	<ParkingSpot.h>
+
+1515240006 f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\include\parkingspot.h
+	"Car.h"
+
+1515228086 f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\include\car.h
+	<Vehicle.h>
+
+1515227893 source:f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\src\bus.cpp
+	"Bus.h"
+
+1515228290 f:\quutamo\faks\9. semestar\oop\oopl\ooplproject\include\bus.h
+	"Vehicle.h"
+
