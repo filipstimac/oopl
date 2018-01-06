@@ -1,8 +1,8 @@
 #ifndef CAR_H
 #define CAR_H
-#include <Vehicle.h>
+#include "Vehicle.h"
 
-class Car {
+class Car: public Vehicle {
 private:
 public:
     Car();

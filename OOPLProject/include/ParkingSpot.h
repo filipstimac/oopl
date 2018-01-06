@@ -1,16 +1,16 @@
 #ifndef PARKINGSPOT_H
 #define PARKINGSPOT_H
-#include "Car.h"
+#include "Vehicle.h"
 
 class ParkingSpot {
 private:
-    Car car;
+    Vehicle vec;
     int spotSize;
 public:
     ParkingSpot();
     ParkingSpot(int spotSize);
     virtual ~ParkingSpot();
-    void add(Car car);
+    void add(Vehicle vec);
 };
 
 #endif // PARKINGSPOT_H

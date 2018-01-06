@@ -1,4 +1,4 @@
-#include "Vehicle.h"
+#include "../include/Vehicle.h"
 
 Vehicle::Vehicle(char* registrationPlate, int spotsNeeded = 1) {
     this->registrationPlate = registrationPlate;
@@ -10,6 +10,6 @@ Vehicle::~Vehicle()
     //dtor
 }
 
-void Vehicle::park(ParkingSpot parkingSpot) {
-    parkingSpot.add(*this);
-}
+//void Vehicle::park(ParkingSpot parkingSpot) {
+//    parkingSpot.add(*this);
+//}

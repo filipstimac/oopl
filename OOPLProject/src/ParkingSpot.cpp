@@ -1,4 +1,4 @@
-#include "ParkingSpot.h"
+#include "../include/ParkingSpot.h"
 
 ParkingSpot::ParkingSpot(int spotSize = 1)
 {
@@ -10,6 +10,6 @@ ParkingSpot::~ParkingSpot()
     //dtor
 }
 
-void ParkingSpot::add(Car car) {
-    this->car = car;
+void ParkingSpot::add(Vehicle vec) {
+    this->vec = vec;
 }
