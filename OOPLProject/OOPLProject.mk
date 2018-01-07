@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Filip Štimac
-Date                   :=06/01/2018
+Date                   :=07/01/2018
 CodeLitePath           :="E:/Program Files/CodeLite"
 LinkerName             :=E:/MinGW/bin/g++.exe
 SharedObjectLinkerName :=E:/MinGW/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := E:/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=E:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Bus.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_ParkingSpot.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Car.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_MotorBike.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/src_ParkingLot.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Bus.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_ParkingSpot.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_Car.cpp$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/src_ParkingLot.cpp$(ObjectSuffix): src/ParkingLot.cpp $(IntermediateDirectory)/src_ParkingLot.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Quutamo/Faks/9. semestar/OOP/oopl/OOPLProject/src/ParkingLot.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_ParkingLot.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_ParkingLot.cpp$(DependSuffix): src/ParkingLot.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_ParkingLot.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_ParkingLot.cpp$(DependSuffix) -MM src/ParkingLot.cpp
+
+$(IntermediateDirectory)/src_ParkingLot.cpp$(PreprocessSuffix): src/ParkingLot.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_ParkingLot.cpp$(PreprocessSuffix) src/ParkingLot.cpp
+
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Quutamo/Faks/9. semestar/OOP/oopl/OOPLProject/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
@@ -132,14 +140,6 @@ $(IntermediateDirectory)/src_Car.cpp$(DependSuffix): src/Car.cpp
 
 $(IntermediateDirectory)/src_Car.cpp$(PreprocessSuffix): src/Car.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_Car.cpp$(PreprocessSuffix) src/Car.cpp
-
-$(IntermediateDirectory)/src_MotorBike.cpp$(ObjectSuffix): src/MotorBike.cpp $(IntermediateDirectory)/src_MotorBike.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/Quutamo/Faks/9. semestar/OOP/oopl/OOPLProject/src/MotorBike.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_MotorBike.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/src_MotorBike.cpp$(DependSuffix): src/MotorBike.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_MotorBike.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_MotorBike.cpp$(DependSuffix) -MM src/MotorBike.cpp
-
-$(IntermediateDirectory)/src_MotorBike.cpp$(PreprocessSuffix): src/MotorBike.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_MotorBike.cpp$(PreprocessSuffix) src/MotorBike.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

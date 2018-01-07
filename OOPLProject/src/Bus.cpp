@@ -3,7 +3,7 @@
 
 Bus::Bus(char* registrationPlate)
 {
-	Vehicle(registrationPlate);
+	this->registrationPlate = registrationPlate;
 }
 
 Bus::~Bus()

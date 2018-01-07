@@ -56,17 +56,17 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="src/ParkingLot.cpp"/>
     <File Name="src/ParkingSpot.cpp"/>
     <File Name="src/Vehicle.cpp"/>
     <File Name="src/Car.cpp"/>
     <File Name="src/Bus.cpp"/>
-    <File Name="src/MotorBike.cpp"/>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
+    <File Name="src/ParkingLot.h"/>
     <File Name="include/Vehicle.h"/>
     <File Name="include/Car.h"/>
     <File Name="include/Bus.h"/>
-    <File Name="include/MotorBike.h"/>
     <File Name="include/ParkingSpot.h"/>
   </VirtualDirectory>
   <VirtualDirectory Name="OOPLProject">

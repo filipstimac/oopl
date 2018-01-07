@@ -1,15 +1,21 @@
 #include "./include/Vehicle.h"
+#include <stddef.h>
 
-Vehicle::Vehicle(char* registrationPlate, int spotsNeeded = 1) {
+Vehicle::Vehicle(char* registrationPlate, int spotsNeeded) {
     this->registrationPlate = registrationPlate;
     this->spotsNeeded = spotsNeeded;
 }
 
-Vehicle::~Vehicle()
-{
-    //dtor
+Vehicle::Vehicle(char* registrationPlate) {
+	this->registrationPlate = registrationPlate;
+    this->spotsNeeded = 1;
 }
 
-//void Vehicle::park(ParkingSpot parkingSpot) {
-//    parkingSpot.add(*this);
-//}
+Vehicle::Vehicle() {
+	this->registrationPlate = NULL;
+    this->spotsNeeded = 1;
+}
+
+Vehicle::~Vehicle() {
+    //dtor
+}

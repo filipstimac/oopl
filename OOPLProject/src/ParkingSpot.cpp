@@ -1,15 +1,17 @@
 #include "../include/ParkingSpot.h"
+#include <stddef.h>
 
-ParkingSpot::ParkingSpot(int spotSize = 1)
-{
-    this->spotSize = spotSize;
+ParkingSpot::ParkingSpot() {
 }
 
-ParkingSpot::~ParkingSpot()
-{
+ParkingSpot::~ParkingSpot() {
     //dtor
 }
 
-void ParkingSpot::add(Vehicle vec) {
-    this->vec = vec;
+void ParkingSpot::add(Vehicle *veh) {
+    this->veh = veh;
+}
+
+void ParkingSpot::remove() {
+    this->veh = NULL;
 }

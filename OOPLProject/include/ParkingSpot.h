@@ -4,13 +4,12 @@
 
 class ParkingSpot {
 private:
-    Vehicle vec;
-    int spotSize;
+    Vehicle *veh;
 public:
     ParkingSpot();
-    ParkingSpot(int spotSize);
     virtual ~ParkingSpot();
-    void add(Vehicle vec);
+    void add(Vehicle *veh);
+	void remove();
 };
 
 #endif // PARKINGSPOT_H
