@@ -4,11 +4,11 @@
 
 class ParkingSpot {
 private:
-    Vehicle *veh;
+    Vehicle* v;
 public:
     ParkingSpot();
     virtual ~ParkingSpot();
-    void add(Vehicle *veh);
+    void add(Vehicle* v) ;
 	void remove();
 };
 

@@ -1,9 +1,8 @@
-#include "../include/Bus.h"
 #include "../include/Vehicle.h"
 
 Bus::Bus(char* registrationPlate)
 {
-	this->registrationPlate = registrationPlate;
+	this -> registrationPlate = registrationPlate;
 }
 
 Bus::~Bus()

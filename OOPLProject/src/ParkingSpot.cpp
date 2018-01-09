@@ -8,10 +8,10 @@ ParkingSpot::~ParkingSpot() {
     //dtor
 }
 
-void ParkingSpot::add(Vehicle *veh) {
-    this->veh = veh;
+void ParkingSpot::add(Vehicle* v) {
+    this -> v = v;
 }
 
 void ParkingSpot::remove() {
-    this->veh = NULL;
+    this -> v = NULL;
 }
