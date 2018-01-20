@@ -1,4 +1,4 @@
-#include "../include/ParkingSpot.h"
+#include "../include/Parking.h"
 #include <stddef.h>
 
 ParkingSpot::ParkingSpot() {

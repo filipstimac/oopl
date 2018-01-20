@@ -1,7 +1,10 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-enum car_Type {REG, HANDICAPPED, ELEC, COMPACT}; //for different types of car
+
+enum car_Type {REG, COMPACT, HANDICAPPED, ELEC}; //for different types of car
+
+
 
 // ***MAIN CLASS*** //
 class Vehicle {
@@ -10,13 +13,21 @@ private:
 protected:
     char *registrationPlate;
     bool parked;
+    int size;
     
 public:
+    //constructors:
     Vehicle();
     Vehicle(char* registrationPlate);
+    
+    //destructor:
     virtual ~Vehicle();
-    char* getRegistrationPlane();
-    bool isParked();
+    
+    //functions:
+   char* getRegistrationPlane();
+   bool isParked();
+   int getSize();
+    
 };
 
 
@@ -26,12 +37,16 @@ public:
 
 //Car Class
 class Car: public Vehicle {
+    
 private:
     car_Type carType;
+    
 public:
     Car();
     Car(char* registrationPlate,car_Type carType);
+    
     virtual ~Car();
+    
     car_Type getCarType();
 };
 
@@ -39,10 +54,13 @@ public:
 //Bus Class
 class Bus: public Vehicle {
 private:
+
 public:
     Bus();
     Bus(char* registrationPlate);
+    
     virtual ~Bus();
+    
 };
 
 
@@ -50,9 +68,11 @@ public:
 //MotorBike class
 class MotorBike: public Vehicle {
 private:
+
 public:
     MotorBike();
     MotorBike(char* registrationPlate);
+    
     virtual ~MotorBike();
 };
 
