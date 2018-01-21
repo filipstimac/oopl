@@ -1,30 +1,25 @@
 #ifndef PARKINGSPOT_H
 #define PARKINGSPOT_H
 
-#include <vector>
+#include <map>
+#include <ctime>
 #include "Vehicles.h"
-
- 
-class ParkingSpot{
-private:
-    Vehicle* v;
-public:
-    ParkingSpot();
-    virtual ~ParkingSpot();
-    void add(Vehicle* v) ;
-	void remove();
-};
-
 
 class ParkingLot {
 private:
-    //vector<ParkingSpot> sector;       I can't create a vector of ParkingSPOT :(
+    int maxSpots;
+    std::map<Vehicle*,int> sector;
+    double priceForSeconds;
+    int count;
+    
 public:
     ParkingLot();
+    ParkingLot(int maxSpots,double priceForSeconds);
     ~ParkingLot();
     
-    void add(Vehicle* v) ;
-    void remove();
+    void park(Vehicle* v) ;
+    double unpark(Vehicle* v);
+    
     
 };
 

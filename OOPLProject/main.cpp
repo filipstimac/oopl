@@ -5,14 +5,14 @@
 #include "./include/Vehicles.h"
 #include "./include/Parking.h"
 #include <ctime>
-
+#include <unistd.h>
 
 
 using namespace std;
 
 int main()
 {
-    
+    vector<ParkingLot> sector;
     Car carRegular = Car("A2xx1Z", REG);
     Car carCompact = Car("B3yy7Y", COMPACT);
     Car carElectic = Car("C4zz8W", ELEC);
@@ -26,11 +26,16 @@ int main()
     cout << carRegular.getCarType() <<  endl;
     cout << carRegular.getSize() << endl;
     
-    //get current time:
-    time_t t = time(0);  
-    struct tm * now = localtime( & t );
-    cout << (now->tm_year + 1900) << '-' << (now->tm_mon + 1) << '-' <<  now->tm_mday << endl 
-         << now->tm_hour << ':' << now->tm_min << ':'<<now ->tm_sec << endl;
+    ParkingLot park1 = ParkingLot(5,10);
+    try{
+    park1.park(&carRegular);
+    cout<<"Im parking"<<endl;
+    sleep(5);
+    cout << park1.unpark(&carRegular) <<endl;
+    cout << park1.unpark(&carCompact) <<endl;
+    }catch(string *e){
+        cerr << e << endl;
+    }
 
     return 0;
 }

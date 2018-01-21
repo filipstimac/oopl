@@ -4,12 +4,15 @@
 
 Vehicle::Vehicle(char* registrationPlate) {
     this -> registrationPlate = registrationPlate;
-    parked = false;
+    this -> parked = false;
+    this -> priceRate = 1;
     
 }
 
 Vehicle::Vehicle() {
 	this -> registrationPlate = NULL;
+    this -> parked = false;
+    this -> priceRate = 1;
 }
 
 
@@ -31,4 +34,8 @@ bool Vehicle::isParked(){
 
 int Vehicle::getSize(){
     return size;
+}
+
+double Vehicle::getPriceRate(){
+    return priceRate;
 }

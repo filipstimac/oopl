@@ -14,6 +14,7 @@ protected:
     char *registrationPlate;
     bool parked;
     int size;
+    double priceRate;
     
 public:
     //constructors:
@@ -27,6 +28,7 @@ public:
    char* getRegistrationPlane();
    bool isParked();
    int getSize();
+   double getPriceRate();
     
 };
 

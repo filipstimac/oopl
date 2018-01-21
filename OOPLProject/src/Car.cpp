@@ -13,6 +13,13 @@ Car::Car(char* registrationPlate, car_Type carType)
         this -> size = 2;
     }
     
+    if(carType == ELEC || carType == HANDICAPPED){
+        this -> priceRate = 0.7;
+    }
+    else{
+        this -> priceRate = 0.8;
+    }
+    
     
 }
 

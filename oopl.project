@@ -3,7 +3,6 @@
   <VirtualDirectory Name="OOPLProject">
     <VirtualDirectory Name="src">
       <File Name="OOPLProject/src/Bus.cpp"/>
-      <File Name="OOPLProject/src/ParkingSpot.cpp"/>
       <File Name="OOPLProject/src/Car.cpp"/>
       <File Name="OOPLProject/src/MotorBike.cpp"/>
       <File Name="OOPLProject/src/Vehicle.cpp"/>

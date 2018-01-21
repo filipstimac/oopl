@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Enrico Capelli
-Date                   :=20/01/18
+Date                   :=21/01/18
 CodeLitePath           :=/home/henryhair/.codelite
 LinkerName             :=/usr/bin/x86_64-linux-gnu-g++
 SharedObjectLinkerName :=/usr/bin/x86_64-linux-gnu-g++ -shared -fPIC
@@ -60,7 +60,7 @@ AS       := /usr/bin/x86_64-linux-gnu-as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/OOPLProject_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Bus.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Car.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_MotorBike.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_ParkingLot.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/OOPLProject_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Bus.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Car.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_MotorBike.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_Vehicle.cpp$(ObjectSuffix) $(IntermediateDirectory)/OOPLProject_src_ParkingLot.cpp$(ObjectSuffix) 
 
 
 
@@ -106,14 +106,6 @@ $(IntermediateDirectory)/OOPLProject_src_Bus.cpp$(DependSuffix): OOPLProject/src
 
 $(IntermediateDirectory)/OOPLProject_src_Bus.cpp$(PreprocessSuffix): OOPLProject/src/Bus.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/OOPLProject_src_Bus.cpp$(PreprocessSuffix) OOPLProject/src/Bus.cpp
-
-$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(ObjectSuffix): OOPLProject/src/ParkingSpot.cpp $(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/henryhair/Documents/Erasmus 1st Semester/Object Oriented Programming/oopl/OOPLProject/src/ParkingSpot.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(DependSuffix): OOPLProject/src/ParkingSpot.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(DependSuffix) -MM OOPLProject/src/ParkingSpot.cpp
-
-$(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(PreprocessSuffix): OOPLProject/src/ParkingSpot.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/OOPLProject_src_ParkingSpot.cpp$(PreprocessSuffix) OOPLProject/src/ParkingSpot.cpp
 
 $(IntermediateDirectory)/OOPLProject_src_Car.cpp$(ObjectSuffix): OOPLProject/src/Car.cpp $(IntermediateDirectory)/OOPLProject_src_Car.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/henryhair/Documents/Erasmus 1st Semester/Object Oriented Programming/oopl/OOPLProject/src/Car.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/OOPLProject_src_Car.cpp$(ObjectSuffix) $(IncludePath)
