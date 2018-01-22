@@ -4,8 +4,6 @@
 #include <iostream>
 enum car_Type {REG, COMPACT, HANDICAPPED, ELEC}; //for different types of car
 
-
-
 // ***MAIN CLASS*** //
 class Vehicle {
 private:
@@ -20,6 +18,8 @@ public:
     //constructors:
     Vehicle();
     Vehicle(char* registrationPlate);
+	Vehicle(char* registrationPlate, bool parked, int size, double priceRate);
+	Vehicle(const Vehicle &v);
     
     //destructor:
     virtual ~Vehicle();
@@ -50,6 +50,7 @@ private:
 public:
     Car();
     Car(char* registrationPlate,car_Type carType);
+	Car(const Car &c);
     
     virtual ~Car();
     
@@ -65,6 +66,7 @@ private:
 public:
     Bus();
     Bus(char* registrationPlate);
+	Bus(const Bus &b);
     
     virtual ~Bus();
     
@@ -80,6 +82,7 @@ private:
 public:
     MotorBike();
     MotorBike(char* registrationPlate);
+	MotorBike(const MotorBike &mb);
     
     virtual ~MotorBike();
 	

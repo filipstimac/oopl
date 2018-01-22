@@ -3,21 +3,14 @@
 #include <stddef.h>
 #include <iostream>
 
+Vehicle::Vehicle(char* registrationPlate = NULL, bool parked = false, int size = 2, double priceRate = 1) :
+	registrationPlate(registrationPlate), parked(parked), size(size), priceRate(priceRate) { }
 
-Vehicle::Vehicle(char* registrationPlate) {
+Vehicle::Vehicle(char* registrationPlate = NULL) {
     this -> registrationPlate = registrationPlate;
     this -> parked = false;
     this -> priceRate = 1;
-    
 }
-
-Vehicle::Vehicle() {
-	this -> registrationPlate = NULL;
-    this -> parked = false;
-    this -> priceRate = 1;
-}
-
-
 
 Vehicle::~Vehicle() {
     //dtor
@@ -50,3 +43,6 @@ std::ostream& Vehicle::print(std::ostream& out) const {
 	out << registrationPlate;
 	return out;
 }
+
+Vehicle::Vehicle(const Vehicle &v) :
+	registrationPlate(v.registrationPlate), parked(v.parked), size(v.size), priceRate(v.priceRate) { }

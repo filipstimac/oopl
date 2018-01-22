@@ -1,9 +1,8 @@
 #include "../include/Vehicles.h"
 
 
-Car::Car(char* registrationPlate, car_Type carType)
-{
-    this -> registrationPlate = registrationPlate;
+Car::Car(char* registrationPlate = NULL, car_Type carType = REG)
+	: Vehicle(registrationPlate) {
     this -> carType = carType;
     
     if(carType == COMPACT){
@@ -19,8 +18,6 @@ Car::Car(char* registrationPlate, car_Type carType)
     else{
         this -> priceRate = 0.8;
     }
-    
-    
 }
 
 Car::~Car()
@@ -49,3 +46,6 @@ std::ostream& Car::print(std::ostream& out) const {
 	out << registrationPlate;
 	return out;
 }
+
+Car::Car(const Car &c) :
+	Vehicle(c.registrationPlate, c.parked, c.size, c.priceRate), carType(c.carType) { }

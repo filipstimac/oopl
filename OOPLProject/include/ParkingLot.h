@@ -15,6 +15,7 @@ private:
 public:
     ParkingLot();
     ParkingLot(int maxSpots,double priceForSeconds);
+	ParkingLot(const ParkingLot &pl);
     ~ParkingLot();
     
     void park(Vehicle* v) ;

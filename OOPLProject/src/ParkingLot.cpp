@@ -55,3 +55,6 @@ void ParkingLot::unpark(Vehicle* v){
     }
     
 }
+
+ParkingLot::ParkingLot(const ParkingLot &pl) :
+	maxSpots(pl.maxSpots), sector(pl.sector), priceForSeconds(pl.priceForSeconds), count(pl.count) { }
