@@ -1,4 +1,7 @@
-#include "../include/Parking.h"
+#include "../include/ParkingLot.h"
+#include "../include/ParkingLotException.h"
+#include <iostream>
+#include <map>ŞŞŞ
 
 ParkingLot::ParkingLot()
 {
@@ -26,22 +29,29 @@ void ParkingLot::park(Vehicle* v){
         sector[v] = time;
     }
     else 
-        throw "Sorry :( The Parking lot is already full";
+        throw ParkingLotException("Error: The Parking lot is already full");
     
 }
 
-double ParkingLot::unpark(Vehicle* v){
+void ParkingLot::unpark(Vehicle* v){
     
     if(count == 0){
-        throw "it is already Empty. Your car is in another ParkingLot";
+        throw ParkingLotException("Error: the ParkingLot is Empty, Your car is in another ParkingLot!");
     }
-    else{
+    
+    if(sector.find(v) != sector.end()){
         count -= v->getSize();
         time_t t = time(0);
         int timeEnd = static_cast<int>(t);
         int timeStart = sector.find(v)->second;
         sector.erase(v);
-        return (timeEnd-timeStart)*(v->getPriceRate())*(v->getSize())*priceForSeconds;
+        std::cout << "Unparking " << *v << " that arrives at " 
+        << sector.find(v)->second << " and leaves at " << timeEnd 
+        << " it needs to pay " << (timeEnd-timeStart)*(v->getPriceRate())*(v->getSize())*priceForSeconds << "$" << std::endl;
+        
+    }
+    else{
+        throw ParkingLotException("Error: Your car is in another ParkingLot");
     }
     
 }

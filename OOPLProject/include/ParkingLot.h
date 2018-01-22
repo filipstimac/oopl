@@ -1,5 +1,5 @@
-#ifndef PARKINGSPOT_H
-#define PARKINGSPOT_H
+#ifndef PARKINGLOT_H
+#define PARKINGLOT_H
 
 #include <map>
 #include <ctime>
@@ -18,9 +18,9 @@ public:
     ~ParkingLot();
     
     void park(Vehicle* v) ;
-    double unpark(Vehicle* v);
+    void unpark(Vehicle* v);
     
     
 };
 
-#endif // PARKINGSPOT_H
+#endif // PARKINGLOT_H

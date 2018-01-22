@@ -7,10 +7,12 @@
       <File Name="OOPLProject/src/MotorBike.cpp"/>
       <File Name="OOPLProject/src/Vehicle.cpp"/>
       <File Name="OOPLProject/src/ParkingLot.cpp"/>
+      <File Name="OOPLProject/src/ParkingLotException.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="include">
       <File Name="OOPLProject/include/Vehicles.h"/>
-      <File Name="OOPLProject/include/Parking.h"/>
+      <File Name="OOPLProject/include/ParkingLotException.h"/>
+      <File Name="OOPLProject/include/ParkingLot.h"/>
     </VirtualDirectory>
     <File Name="OOPLProject/main.cpp"/>
   </VirtualDirectory>

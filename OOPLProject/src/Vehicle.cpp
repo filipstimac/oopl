@@ -1,4 +1,5 @@
 #include "../include/Vehicles.h"
+#include "../include/ParkingLotException.h"
 #include <stddef.h>
 #include <iostream>
 
