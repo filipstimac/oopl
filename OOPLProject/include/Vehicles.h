@@ -1,7 +1,7 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-
+#include <iostream>
 enum car_Type {REG, COMPACT, HANDICAPPED, ELEC}; //for different types of car
 
 
@@ -23,8 +23,12 @@ public:
     
     //destructor:
     virtual ~Vehicle();
-    
+	
+	//operators
+	friend std::ostream& operator<<(std::ostream &out, const Vehicle &v);
+	
     //functions:
+   virtual std::ostream& print(std::ostream& out) const;
    char* getRegistrationPlane();
    bool isParked();
    int getSize();
@@ -49,6 +53,7 @@ public:
     
     virtual ~Car();
     
+	virtual std::ostream& print(std::ostream& out) const;
     car_Type getCarType();
 };
 
@@ -63,6 +68,7 @@ public:
     
     virtual ~Bus();
     
+	virtual std::ostream& print(std::ostream& out) const;
 };
 
 
@@ -76,6 +82,8 @@ public:
     MotorBike(char* registrationPlate);
     
     virtual ~MotorBike();
+	
+	virtual std::ostream& print(std::ostream& out) const;
 };
 
 #endif // VEHICLE_H

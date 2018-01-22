@@ -10,3 +10,8 @@ Bus::~Bus()
 {
     //dtor
 }
+
+std::ostream& Bus::print(std::ostream& out) const {
+	out << "Bus " << registrationPlate;
+	return out;
+}

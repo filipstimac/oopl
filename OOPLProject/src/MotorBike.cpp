@@ -11,3 +11,8 @@ MotorBike::~MotorBike()
 {
     //dtor
 }
+
+std::ostream& MotorBike::print(std::ostream& out) const {
+	out << "Motorbike " << registrationPlate;
+	return out;
+}

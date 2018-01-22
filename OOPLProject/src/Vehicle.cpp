@@ -1,5 +1,6 @@
 #include "../include/Vehicles.h"
 #include <stddef.h>
+#include <iostream>
 
 
 Vehicle::Vehicle(char* registrationPlate) {
@@ -38,4 +39,13 @@ int Vehicle::getSize(){
 
 double Vehicle::getPriceRate(){
     return priceRate;
+}
+
+std::ostream& operator<<(std::ostream &out, const Vehicle &v) {
+	return v.print(out);
+}
+
+std::ostream& Vehicle::print(std::ostream& out) const {
+	out << registrationPlate;
+	return out;
 }

@@ -32,3 +32,20 @@ Car::~Car()
 car_Type Car::getCarType(){
     return carType;
 }
+
+std::ostream& Car::print(std::ostream& out) const {
+	if(carType == COMPACT) {
+		out << "Compact car ";
+	}
+	else if(carType == ELEC) {
+		out << "Electric car ";
+	}
+	else if(carType == HANDICAPPED) {
+		out << "Handicapped car ";
+	}
+	else if(carType == REG) {
+		out << "Regular car ";
+	}
+	out << registrationPlate;
+	return out;
+}
