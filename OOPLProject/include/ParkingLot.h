@@ -2,7 +2,6 @@
 #define PARKINGLOT_H
 
 #include <map>
-#include <ctime>
 #include "Vehicles.h"
 
 class ParkingLot {

@@ -1,11 +1,9 @@
 #include "../include/ParkingLotException.h"
 
-   ParkingLotException::ParkingLotException(std::string ss) : s(ss) {}
+ParkingLotException::ParkingLotException(std::string ss) : s(ss) {}
    
-   ParkingLotException::~ParkingLotException() throw () {}
+ParkingLotException::~ParkingLotException() throw () {}
    
-   const char* ParkingLotException::what() const throw() { return s.c_str(); }
-   
-   std::string ParkingLotException::getMessage(){
-       return s;
-   }
+std::string ParkingLotException::getMessage(){
+    return s;
+}

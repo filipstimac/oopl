@@ -21,7 +21,10 @@ ParkingLot::~ParkingLot()
 }
 
 void ParkingLot::park(Vehicle* v){
-
+    
+    if(sector.find(v) != sector.end())
+        throw ParkingLotException("Error: This car is already in the ParkingLot!");
+        
     if(count + v->getSize() <= maxSpots){
         count += v->getSize();
         time_t t = time(0);
@@ -29,14 +32,14 @@ void ParkingLot::park(Vehicle* v){
         sector[v] = time;
     }
     else 
-        throw ParkingLotException("Error: The Parking lot is already full");
+        throw ParkingLotException("Sorry: The Parking lot is already full!");
     
 }
 
 void ParkingLot::unpark(Vehicle* v){
     
     if(count == 0){
-        throw ParkingLotException("Error: the ParkingLot is Empty, Your car is in another ParkingLot!");
+        throw ParkingLotException("Error: the ParkingLot is Empty!");
     }
     
     if(sector.find(v) != sector.end()){
@@ -45,9 +48,9 @@ void ParkingLot::unpark(Vehicle* v){
         int timeEnd = static_cast<int>(t);
         int timeStart = sector.find(v)->second;
         sector.erase(v);
-        std::cout << "Unparking " << *v << " that arrives at " 
-        << sector.find(v)->second << " and leaves at " << timeEnd 
-        << " it needs to pay " << (timeEnd-timeStart)*(v->getPriceRate())*(v->getSize())*priceForSeconds << "$" << std::endl;
+        std::cout << "Unparking " << *v << ". It needs to pay " 
+        << (timeEnd-timeStart)*(v->getPriceRate())*(v->getSize())*priceForSeconds 
+        << "$" << std::endl;
         
     }
     else{

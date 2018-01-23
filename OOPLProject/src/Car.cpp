@@ -1,7 +1,6 @@
 #include "../include/Vehicles.h"
 #include <string.h>
 
-
 Car::Car(char* registrationPlate = NULL, car_Type carType = REG)
 	: Vehicle(registrationPlate) {
     this -> carType = carType;

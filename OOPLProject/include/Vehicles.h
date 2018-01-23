@@ -2,6 +2,7 @@
 #define VEHICLE_H
 
 #include <iostream>
+
 enum car_Type {REG, COMPACT, HANDICAPPED, ELEC}; //for different types of car
 
 // ***MAIN CLASS*** //
