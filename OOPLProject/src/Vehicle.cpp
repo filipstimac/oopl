@@ -1,7 +1,5 @@
 #include "../include/Vehicles.h"
 #include "../include/ParkingLotException.h"
-#include <stddef.h>
-#include <iostream>
 
 Vehicle::Vehicle(char* registrationPlate = NULL, bool parked = false, int size = 2, double priceRate = 1) :
 	registrationPlate(registrationPlate), parked(parked), size(size), priceRate(priceRate) { }

@@ -1,14 +1,12 @@
-#include <iostream>
-#include <stdlib.h>
-#include <stdio.h>
-#include <vector>
 #include "./include/Vehicles.h"
 #include "./include/ParkingLot.h"
 #include "./include/ParkingLotException.h"
+
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 #include <ctime>
 #include <unistd.h>
-
-
 
 using namespace std;
 
@@ -34,24 +32,38 @@ int main()
     ParkingLot park1 = ParkingLot(5,1);
     cout << endl << endl;
     
-    //Parking some car?:
+    
+    //Parking some Vehicles:
     try{
     park1.park(&carRegular);
+    
+//****  Add next line for "Error: This car is already in the ParkingLot!"   ****
+//    park1.park(&carRegular);
+
     sleep(5);
-    park1.park(&carCompact);
+    park1.park(&carElectic);
     
     sleep(5);
     park1.unpark(&carRegular);
-    sleep(5);
-    park1.unpark(&carCompact);
     
-//    remove/add next line to test different exception
+    sleep(5);
+    park1.unpark(&carElectic);
+    
+//****    Add next line for "Error: the ParkingLot is Empty!"  ****
 //    park1.park(&carHandicapped);
     
-    park1.unpark(&motorbike);
+//****    Add next lines for "Sorry: The Parking lot is already full!"  ****
+//    park1.park(&bus);
+//    park1.park(&carCompact);
+//    park1.park(&carHandicapped);
+
+
+//****  Add next lines for "Error: Your car is in another ParkingLot"  ****
+//    park1.park(&motorbike);
+//    park1.unpark(&bus);
     
     }catch(ParkingLotException caught) {
-        cout << caught.getMessage() << std::endl;
+        cout << caught.getMessage() << endl;
     }
 
     return 0;
