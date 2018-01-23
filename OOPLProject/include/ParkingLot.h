@@ -20,8 +20,8 @@ public:
     
     void park(Vehicle* v) ;
     void unpark(Vehicle* v);
-    
-    
+    friend std::ostream& operator<<(std::ostream &out, const ParkingLot &pl);
+	ParkingLot& operator=(const ParkingLot &pl);
 };
 
 #endif // PARKINGLOT_H

@@ -1,4 +1,5 @@
 #include "../include/Vehicles.h"
+#include <string.h>
 
 
 Car::Car(char* registrationPlate = NULL, car_Type carType = REG)
@@ -49,3 +50,23 @@ std::ostream& Car::print(std::ostream& out) const {
 
 Car::Car(const Car &c) :
 	Vehicle(c.registrationPlate, c.parked, c.size, c.priceRate), carType(c.carType) { }
+	
+Car& Car::operator=(const Car &c) {
+	if(this != &c) {
+		carType = c.carType;
+		parked = c.parked;
+		size = c.size;
+		priceRate = c.priceRate;
+		
+		delete[] this->registrationPlate;
+		this->registrationPlate = NULL;
+		
+		const int length = strlen(c.registrationPlate);
+		
+		this->registrationPlate = new char[length + 1];
+		this->registrationPlate[0] = '\0';
+		std::copy(c.registrationPlate, c.registrationPlate + length, this->registrationPlate);
+	}
+	
+	return *this;
+}

@@ -29,6 +29,7 @@ public:
 	
     //functions:
    virtual std::ostream& print(std::ostream& out) const;
+   Vehicle& operator=(const Vehicle &v);
    char* getRegistrationPlane();
    bool isParked();
    int getSize();
@@ -55,6 +56,7 @@ public:
     virtual ~Car();
     
 	virtual std::ostream& print(std::ostream& out) const;
+	Car& operator=(const Car &c);
     car_Type getCarType();
 };
 
@@ -71,6 +73,7 @@ public:
     virtual ~Bus();
     
 	virtual std::ostream& print(std::ostream& out) const;
+	Bus& operator=(const Bus &b);
 };
 
 
@@ -87,6 +90,7 @@ public:
     virtual ~MotorBike();
 	
 	virtual std::ostream& print(std::ostream& out) const;
+	MotorBike& operator=(const MotorBike &mb);
 };
 
 #endif // VEHICLE_H

@@ -1,7 +1,7 @@
 #include "../include/ParkingLot.h"
 #include "../include/ParkingLotException.h"
 #include <iostream>
-#include <map>ŞŞŞ
+#include <map>
 
 ParkingLot::ParkingLot()
 {
@@ -58,3 +58,20 @@ void ParkingLot::unpark(Vehicle* v){
 
 ParkingLot::ParkingLot(const ParkingLot &pl) :
 	maxSpots(pl.maxSpots), sector(pl.sector), priceForSeconds(pl.priceForSeconds), count(pl.count) { }
+	
+std::ostream& operator<<(std::ostream &out, const ParkingLot &pl) {
+	out << "Spots: " << pl.count << "/" << pl.maxSpots << ", Price per second: " << pl.priceForSeconds;
+	return out;
+}
+
+ParkingLot& ParkingLot::operator=(const ParkingLot &pl) {
+	if(this != &pl) {
+		maxSpots = pl.maxSpots;
+		priceForSeconds = pl.priceForSeconds;
+		count = pl.count;
+		sector.clear();
+		sector.insert(pl.sector.begin(), pl.sector.end());
+	}
+	
+	return *this;
+}
