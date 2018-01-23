@@ -20,6 +20,10 @@ int main()
     MotorBike motorbike = MotorBike("XX54hI");
     Bus bus = Bus("PO15kI");
     
+   //testing copy constructor and operator= overloading
+//    Bus busCopy(bus);
+//    Bus busAssignment = bus1;
+    
     //testing print vehicles:
 	cout << carRegular << endl;
 	cout << carCompact << endl;
