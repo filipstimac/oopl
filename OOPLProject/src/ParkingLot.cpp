@@ -30,6 +30,7 @@ void ParkingLot::park(Vehicle* v){
         time_t t = time(0);
         int time = static_cast<int>(t);
         sector[v] = time;
+        std::cout << "Parking " << *v << std::endl;
     }
     else 
         throw ParkingLotException("Sorry: The Parking lot is already full!");
